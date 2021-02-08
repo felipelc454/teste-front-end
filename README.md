@@ -1,6 +1,6 @@
-![Easynvest](https://user-images.githubusercontent.com/8808895/46966234-81191d00-d083-11e8-8da3-63d1f12e4365.png)
+![Raks](https://raks.com.br/wp-content/uploads/2020/12/logo.png)
 
-# Teste de Front-end Easynvest
+# Teste de Front-end Raks
 Este teste é apresentado aos candidatos as vagas de desenvolvimento Front-end para avaliar os quesitos técnicos.
 
 ### O Desafio
