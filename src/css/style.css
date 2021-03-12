@@ -152,7 +152,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /*padding: 30px;*/
     background-color: #ffffff;
 }
 
@@ -292,18 +291,18 @@ ul {
     width: 100vw;
 }
   
-  li {
+li {
     float: left;
-  }
+}
   
-  li a {
+li a {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-  }
+}
   
-  li a:hover {
+li a:hover {
     background-color: #00c8b3;
-  }
+}

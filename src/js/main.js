@@ -1,5 +1,5 @@
+//Realiza a requisição para API fornecida e grava os dados no localstorage
 carregaDados = () => {
-    //Requisição para API fornecida
     let xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://private-21e8de-rafaellucio.apiary-mock.com/users', true)
     xhr.onreadystatechange = function() { 
@@ -10,6 +10,7 @@ carregaDados = () => {
     xhr.send();
 }
 
+//Carreaga os dados na listagem
 carregaLista = () => {
     let lista = JSON.parse(localStorage.getItem('usuarios'))
     lista.forEach((element) => {
@@ -22,12 +23,14 @@ carregaLista = () => {
     
 }
 
+//Redireciona para o form com os dados de um usuário para edição
 onEdit = (chave) => {
     let usuario = procuraUsuario(chave)[1]
     const url = window.location.href.split("?")[0]
     window.location.href = url.replace("listagem.html", "index.html?chave=")+usuario.cpf
 }
 
+//Apaga os dados de um determinado usuário a partir de uma chave(CPF)
 apagarUsuario = (chave) => {
     let lista = JSON.parse(localStorage.getItem('usuarios'))
     let retorno = procuraUsuario(chave)
@@ -36,6 +39,7 @@ apagarUsuario = (chave) => {
     location.reload()
 }
 
+//Encontra um determinado usuário a partir de uma chave(CPF)
 procuraUsuario = (chave) => {
     let lista = JSON.parse(localStorage.getItem('usuarios'))
     for(let i=0; i < lista.length; i++){
@@ -46,6 +50,9 @@ procuraUsuario = (chave) => {
     return false
 }
 
+/*Realiza a submissão dos dados inseridos no formulário e salva no localstorage.
+Se o usuário já existir na base de dados, i. e. o CPF já estiver cadastrado,
+atualiza os dados. Se não, insere um novo usuário na lista*/
 onSubmit = () => {
 
     if(
@@ -136,16 +143,19 @@ onSubmit = () => {
 
 }
 
+//Redireciona para o cadastro
 redirectCadastro = () => {
     const url = window.location.href
     window.location.href = url.replace("listagem.html", "index.html")
 }
 
+//Verifica se um email é válido
 validateEmail = (email) => {
     var emailPattern =  /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
     return emailPattern.test(email);
 }
 
+//Verifica se um cpf é válido
 validateCpf = (cpf) => {
     if (typeof cpf !== "string") return false
     cpf = cpf.replace(/[\s.-]*/igm, '')
@@ -181,16 +191,18 @@ validateCpf = (cpf) => {
     return true
 }
 
+//Verifica se um nome é válido
 validateNome = (nome) => {
     if(nome.length < 3 || nome == '') return false
     return true
 }
 
+//Verifica se um telefone é válido
 validateTel = (telefone) => {
     if(telefone.length < 10 || telefone == '') return false
     return true
 }
-
+//Carrega os dados no formulário para edição
 carregaForm = () => {
     const urlParams = new URLSearchParams(window.location.search)
     const cpf = urlParams.get('chave')
