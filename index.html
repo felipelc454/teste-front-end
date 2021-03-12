@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cadastro</title>
+
+    <link rel="stylesheet" href="./src/css/style.css"> <!-- CSS -->
+</head>
+<body>
+
+    <div class="card">
+
+        <form action="#">
+
+            <h1>Formulário</h1>
+
+            <div class="input-container">
+                <input id="nome" name="nome" class="input" type="text"/>
+                <label class="label" for="nome">Nome completo (sem abreviações)</label>
+                <div hidden id="mensagemNome" class="invalid-text">Campo deve conter 3 caracteres ou mais</div>
+            </div>
+            
+            <div class="input-container">
+                <input id="email" name="email" class="input" type="text"/>
+                <label class="label" for="email">E-mail</label>
+                <div hidden id="mensagemEmail" class="invalid-text">Insira um e-mail válido</div>
+            </div>
+            
+            <div class="input-container">
+                <input id="cpf" name="cpf" class="input" type="text"/>
+                <label class="label" for="cpf">CPF</label>
+                <div hidden id="mensagemCpf" class="invalid-text">Insira um CPF válido</div>
+            </div>
+            
+            <div class="input-container">
+                <input id="telefone" name="telefone" class="input" type="text"/>
+                <label class="label" for="telefone">Telefone</label>
+                <div hidden id="mensagemTelefone" class="invalid-text">Insira um número de telefone válido</div>
+            </div>
+
+            <div class="submit">
+                <button id="botao" type="button" class="button" onclick="onSubmit()">
+                    <div id="loader" hidden class="loader"></div>
+                    <span id="textButton">Cadastrar</span>
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+<!--Scripts-->
+<script src="./src/js/main.js"></script>
+<script type="application/javascript">
+
+    document.addEventListener('DOMContentLoaded', function() {
+        carregaForm()
+    });
+
+    let d = document, [inputs, botao] = [
+    d.querySelectorAll('input'),
+    d.querySelector('#botao')]
+    botao.disabled = true
+    
+    for (i = 0; i < inputs.length; i++) {
+      inputs[i].addEventListener('input',() => {
+        let values = []
+        inputs.forEach(v => values.push(v.value))
+        botao.disabled = values.includes('')
+      })
+    }
+
+</script>
+
+</body>
+</html>

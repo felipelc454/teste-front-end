@@ -1,150 +1,100 @@
 ![Raks](https://raks.com.br/wp-content/uploads/2020/12/logo.png)
 
-# Teste de Front-end Raks
-Este teste é apresentado aos candidatos as vagas de desenvolvimento Front-end para avaliar os quesitos técnicos.
+# Teste Frontend Raks - Felipe Lelles Carneiro &middot;
+> Additional information or tag line
 
-### O Desafio
+A brief description of your project, what it is used for.
 
-Seu objetivo é criar um simples app que deve conter duas páginas, uma que exibe um formulário com os campos abaixo, e outra que liste os dados cadastrados.
+## Installing / Getting started
 
-* Nome completo
-* CPF
-* Telefone
-* Email
+A quick introduction of the minimal setup you need to get a hello world up &
+running.
 
-### Pré-requisitos: 
- - Deve ser possível criar, listar e excluir os dados cadastrados pelo formulário;
- - Os inputs de texto e botão devem ter a aparência conforme o guia de estilo abaixo (com validações);
- - Fazer a persistência dos dados no `localStorage` ou `IndexedDB`;
- - Não é permitido a utilização de nenhum framework ou o uso de qualquer biblioteca (exceto para testes unitário e tasks de build), recomendado uso de ECMAScript 6+;
-
-Para ter o estado inicial da lista de usuário utilizar este recurso abaixo:
-
-> GET https://private-21e8de-rafaellucio.apiary-mock.com/users
-
-Response:
-
-```json
-
-[
-  {
-    "name": "My name 1",
-    "cpf": "04080757247",
-    "phone": "11987654321",
-    "email": "myemail1@test.com.br"
-  },
-  {
-    "name": "My name 2",
-    "cpf": "77797584192",
-    "phone": "11987654321",
-    "email": "myemail2@test.com.br"
-  },
-  {
-    "name": "My name 3",
-    "cpf": "45486737688",
-    "phone": "11987654321",
-    "email": "myemail3@test.com.br"
-  }
-]
+```shell
+commands here
 ```
 
-A partir deste ponto utilizar o `localStorage/IndexedDB` para persistir localmente as informações.
+Here you should say what actually happens when you execute the code above.
 
-Save:
+## Developing
 
-```json
-{
-  "name": "My name 4",
-  "cpf": "74668869066",
-  "phone": "11987654321",
-  "email": "myemail4@test.com.br"
-}
+### Built With
+List main libraries, frameworks used including versions (React, Angular etc...)
+
+### Prerequisites
+What is needed to set up the dev environment. For instance, global dependencies or any other tools. include download links.
+
+
+### Setting up Dev
+
+Here's a brief intro about what a developer must do in order to start developing
+the project further:
+
+```shell
+git clone https://github.com/your/your-project.git
+cd your-project/
+packagemanager install
 ```
 
-Lista local:
-```json
-[
-  {
-    "name": "My name 1",
-    "cpf": "04080757247",
-    "phone": "11987654321",
-    "email": "myemail1@test.com.br"
-  },
-  {
-    "name": "My name 2",
-    "cpf": "77797584192",
-    "phone": "11987654321",
-    "email": "myemail2@test.com.br"
-  },
-  {
-    "name": "My name 3",
-    "cpf": "45486737688",
-    "phone": "11987654321",
-    "email": "myemail3@test.com.br"
-  },
-  {
-    "name": "My name 4",
-    "cpf": "74668869066",
-    "phone": "11987654321",
-    "email": "myemail4@test.com.br"
-  }
-]
+And state what happens step-by-step. If there is any virtual environment, local server or database feeder needed, explain here.
+
+### Building
+
+If your project needs some additional steps for the developer to build the
+project after some code changes, state them here. for example:
+
+```shell
+./configure
+make
+make install
 ```
 
-### Plus:
- - A página ser responsiva;
- - Permitir edição;
- - Uso de pré-processador css;
- - Testes End to End;
+Here again you should state what actually happens when the code above gets
+executed.
 
-### O que esperamos:
- - Testes, no mínimo testes unitários;
- - Padrão de Projeto e boas práticas de Orientação a Objetos;
- - Utilizar ECMAScript 6+;
- - Criar um passo a passo de como rodar sua aplicação [(Sugestão)](https://github.com/wearehive/project-guidelines/blob/master/README.sample.md);
- - Criar uma breve descrição da solução utilizada.
+### Deploying / Publishing
+give instructions on how to build and release a new version
+In case there's some step you have to take that publishes this project to a
+server, this is the right time to state it.
+
+```shell
+packagemanager deploy your-project -s server.com -u username -p password
+```
+
+And again you'd need to tell what the previous code actually does.
+
+## Versioning
+
+We can maybe use [SemVer](http://semver.org/) for versioning. For the versions available, see the [link to tags on this repository](/tags).
 
 
-## Guia de estilo
+## Configuration
 
-### Input:
- - Cor da fonte sem foco: <span style="color:#efeeed">*#efeeed*</span>.
- - Cor da fonte com foco: <span style="color:#333333">*#333333*</span>.
- - Cor da borda: <span style="color:#efeeed">*#efeeed*</span>.
+Here you should write what are all of the configurations a user can enter when using the project.
 
-![inputs](./images/name.png)
+## Tests
 
-### Input Inválido:
- - Cor da fonte: <span style="color:#eb4a46">*#eb4a46*</span>.
- - Cor da borda: <span style="color:#eb4a46">*#eb4a46*</span>.
+Describe and show how to run the tests with code examples.
+Explain what these tests test and why.
 
-![inputs](./images/name_validation.png)
+```shell
+Give an example
+```
 
-### Botão Habilitado:
- - Cor da fonte com foco: <span style="color:#ffffff">*#ffffff*</span>.
- - Cor de background: <span style="color:#00c8b3">*#00c8b3*</span>.
+## Style guide
 
-![inputs](./images/button_enable.png)
+Explain your code style and show how to check it.
 
-### Botão Hover:
- - Opacidade do botão com hover: 70%.
+## Api Reference
 
-![inputs](./images/button_enable_hover.png)
+If the api is external, link to api documentation. If not describe your api including authentication methods as well as explaining all the endpoints with their required parameters.
 
-### Botão Desabilitado:
- - Cor da fonte sem foco: <span style="color:#dddcdc">*#dddcdc*</span>.
- - Cor de background: <span style="color:#f6f6f6">*#f6f6f6*</span>.
 
-![inputs](./images/button_disable.png)
+## Database
 
-### Botão Loading:
+Explaining what database (and version) has been used. Provide download links.
+Documents your database design and schemas, relations etc... 
 
-![inputs](./images/button_enable_loading.png)
+## Licensing
 
-**Criar animação de loading ao clicar no submit*
-
-### Exemplo Final
-
-![inputs](./images/form.png)
-
-** Use sua criatividade para criar a página para listar os dados cadastrados **
+State what the license is and how to find the text version of the license.
